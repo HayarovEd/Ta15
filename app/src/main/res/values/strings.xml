@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Деньги до зп</string>
+    <string name="amount">СУММА</string>
+    <string name="bet">СТАВКА</string>
+    <string name="age">ВОЗРАСТ</string>
+    <string name="take_money">Получить деньги</string>
 </resources>
