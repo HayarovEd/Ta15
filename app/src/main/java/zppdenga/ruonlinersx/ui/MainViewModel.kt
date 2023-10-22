@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import zppdenga.ruonlinersx.data.mapper.maxAmount
+import zppdenga.ruonlinersx.domain.model.Loan
 import zppdenga.ruonlinersx.domain.repository.TaRepository
 import zppdenga.ruonlinersx.domain.utils.Resource
 
@@ -17,6 +19,7 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
     private var _state = MutableStateFlow(MainState())
     val state = _state.asStateFlow()
+    private var _baseLoans =  MutableStateFlow(emptyList<Loan>())
 
     init {
         loadData()
@@ -33,14 +36,25 @@ class MainViewModel @Inject constructor(
                         .updateStateUI()
                 }
                 is Resource.Success -> {
+                    val loans = resultLoad.data?: emptyList()
                     _state.value.copy(
-                        moneyList = resultLoad.data?: emptyList(),
-                        isLoading = false
+                        moneyList = loans,
+                        isLoading = false,
+                        maxSum = maxAmount(loans)
                     )
                         .updateStateUI()
+                    _baseLoans.value = loans
                 }
             }
         }
+    }
+
+    fun filterByMaxAmount(needSum:Int) {
+        _state.value.copy(
+            moneyList = _baseLoans.value.filter { it.sumOneInt<=needSum },
+            neededSum = needSum
+        )
+            .updateStateUI()
     }
 
     private fun MainState.updateStateUI() {

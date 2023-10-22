@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,9 +20,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -29,6 +30,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import zppdenga.ruonlinersx.R
+import zppdenga.ruonlinersx.R.font
+import zppdenga.ruonlinersx.ui.theme.baseText
 import zppdenga.ruonlinersx.ui.theme.green
 import zppdenga.ruonlinersx.ui.theme.white
 
@@ -40,6 +44,7 @@ fun BaseScreen(
 ) {
     val state = viewModel.state.collectAsState()
     val context = LocalContext.current
+
     if (state.value.error!=null) {
         Toast.makeText(context, state.value.error, Toast.LENGTH_LONG).show()
     }
@@ -61,7 +66,32 @@ fun BaseScreen(
                 .background(color = white)
                 .padding(10.dp)
         ) {
-
+            Row (
+                modifier = modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ){
+                Text(
+                    text = stringResource(id = R.string.amount_loan),
+                    style = TextStyle(
+                        fontSize = 22.sp,
+                        fontFamily = FontFamily(Font(font.exo)),
+                        fontWeight = FontWeight(400),
+                        color = baseText
+                    ),
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = stringResource(id = R.string.curr),
+                    style = TextStyle(
+                        fontSize = 22.sp,
+                        fontFamily = FontFamily(Font(font.exo)),
+                        fontWeight = FontWeight(400),
+                        color = baseText
+                    ),
+                    textAlign = TextAlign.Center
+                )
+            }
             Spacer(modifier = modifier.height(20.dp))
             LazyColumn(
                 modifier = modifier

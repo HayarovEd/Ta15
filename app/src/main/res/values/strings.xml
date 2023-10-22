@@ -4,4 +4,10 @@
     <string name="bet">СТАВКА</string>
     <string name="age">ВОЗРАСТ</string>
     <string name="take_money">Получить деньги</string>
+    <string name="amount_loan">Сумма займа</string>
+    <string name="curr">₽</string>
+    <string name="first_loan">Первый займ 0%</string>
+    <string name="checkout">Оформление 24/7</string>
+    <string name="your_money">Деньги у вас уже в</string>
+    <string name="your_time">11:21</string>
 </resources>

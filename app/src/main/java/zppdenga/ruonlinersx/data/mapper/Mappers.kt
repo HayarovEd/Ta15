@@ -14,3 +14,11 @@ fun List<LoanDto>.mapToLoan(): List<Loan> {
         )
     }
 }
+
+fun String.convertToInt(): Int {
+    return (this.substring(3,5)+this.substring(6)).toInt()
+}
+
+fun maxAmount(data:List<Loan>): Int {
+    return data.maxOf { it.sumOneInt }
+}
