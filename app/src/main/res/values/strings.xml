@@ -10,4 +10,5 @@
     <string name="checkout">Оформление\n24/7</string>
     <string name="your_money">Деньги у вас\nуже в</string>
     <string name="your_time">11:21</string>
+    <string name="min_money">1000 ₽</string>
 </resources>

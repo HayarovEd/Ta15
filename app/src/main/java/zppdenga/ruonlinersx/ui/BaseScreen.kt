@@ -27,13 +27,13 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextAlign.Companion
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,6 +42,7 @@ import zppdenga.ruonlinersx.R
 import zppdenga.ruonlinersx.R.font
 import zppdenga.ruonlinersx.ui.theme.baseText
 import zppdenga.ruonlinersx.ui.theme.green
+import zppdenga.ruonlinersx.ui.theme.greyText
 import zppdenga.ruonlinersx.ui.theme.white
 
 
@@ -53,16 +54,32 @@ fun BaseScreen(
     val state = viewModel.state.collectAsState()
     val context = LocalContext.current
     val yourMoney = buildAnnotatedString {
-        withStyle(style  = TextStyle(
+        withStyle(style  = SpanStyle(
             fontSize = 22.sp,
             fontFamily = FontFamily(Font(font.exo)),
             fontWeight = FontWeight(400),
             color = baseText
-        )) {
-            append("${ stringResource(id = R.string.your_money) }")
+        )
+        ) {
+            append(stringResource(id = R.string.your_money))
         }
-        withStyle(style = MaterialTheme.typography.body1.toSpanStyle().copy(color = Color.Blue)) {
-            append("Синий текст")
+        withStyle(style  = SpanStyle(
+            fontSize = 22.sp,
+            fontFamily = FontFamily(Font(font.exo)),
+            fontWeight = FontWeight(400),
+            color = baseText
+        )
+        ) {
+            append(" ")
+        }
+        withStyle(style  = SpanStyle(
+            fontSize = 22.sp,
+            fontFamily = FontFamily(Font(font.exo)),
+            fontWeight = FontWeight(400),
+            color = green
+        )
+        ) {
+            append(stringResource(id = R.string.your_time))
         }
     }
     if (state.value.error!=null) {
@@ -112,16 +129,42 @@ fun BaseScreen(
             }
             Spacer(modifier = modifier.height(20.dp))
             Slider(
+                modifier = modifier.fillMaxWidth(),
                 value = state.value.neededSum.toFloat(),
-                valueRange = 0f..state.value.maxSum.toFloat(),
+                valueRange = 1000f..state.value.maxSum.toFloat(),
                 steps = 10000,
                 colors = SliderDefaults.colors(
                     activeTrackColor = green,
                 ),
                 onValueChange = { viewModel.filterByMaxAmount(it.toInt()) }
             )
-            
-            
+            Spacer(modifier = modifier.height(15.dp))
+            Row (
+                modifier = modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = stringResource(id = R.string.min_money),
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontFamily = FontFamily(Font(font.exo)),
+                        fontWeight = FontWeight(400),
+                        color = greyText
+                    ),
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = "${state.value.maxSum} ${stringResource(id = R.string.curr)}",
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontFamily = FontFamily(Font(font.exo)),
+                        fontWeight = FontWeight(400),
+                        color = greyText
+                    ),
+                    textAlign = TextAlign.Center
+                )
+            }
             Spacer(modifier = modifier.height(10.dp))
             Row (
                 modifier = modifier.fillMaxWidth(),
@@ -137,7 +180,7 @@ fun BaseScreen(
                     image = painterResource(id = R.drawable.checkout)
                 )
                 ItemSub(
-                    name = ,
+                    name = yourMoney.toString(),
                     image = painterResource(id = R.drawable.time)
                 )
             }
