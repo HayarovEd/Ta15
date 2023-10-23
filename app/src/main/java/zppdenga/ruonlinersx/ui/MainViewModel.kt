@@ -51,7 +51,7 @@ class MainViewModel @Inject constructor(
 
     fun filterByMaxAmount(needSum:Int) {
         _state.value.copy(
-            moneyList = _baseLoans.value.filter { it.sumOneInt<=needSum },
+            moneyList = _baseLoans.value.filter { it.sumOneInt>=needSum },
             neededSum = needSum
         )
             .updateStateUI()

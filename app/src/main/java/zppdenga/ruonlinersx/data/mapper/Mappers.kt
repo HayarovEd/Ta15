@@ -16,7 +16,11 @@ fun List<LoanDto>.mapToLoan(): List<Loan> {
 }
 
 fun String.convertToInt(): Int {
-    return (this.substring(3,5)+this.substring(6)).toInt()
+    return try {
+        (this.substring(3,5)+this.substring(6)).toInt()
+    } catch (e:Exception) {
+        1000000
+    }
 }
 
 fun maxAmount(data:List<Loan>): Int {

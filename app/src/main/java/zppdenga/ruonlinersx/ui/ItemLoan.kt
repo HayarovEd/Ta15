@@ -5,7 +5,6 @@ import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -23,7 +22,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -60,8 +58,7 @@ fun ItemLoan(
     ) {
         AsyncImage(
             modifier = modifier
-                .width(224.dp)
-                .height(100.dp),
+                .width(224.dp),
             model = loan.imageUrl,
             contentScale = ContentScale.FillWidth,
             contentDescription = ""
@@ -106,11 +103,11 @@ fun ItemLoan(
         Button(
             modifier = modifier
                 .padding(horizontal = 30.dp)
-                .fillMaxWidth()
-                .clip(shape = RoundedCornerShape(6.dp)),
+                .fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
                 containerColor = green
             ),
+            shape = RoundedCornerShape(6.dp),
             contentPadding = PaddingValues(vertical = 14.dp),
             onClick = { openLink.launch(intent) }) {
             Text(

@@ -23,10 +23,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -55,7 +57,7 @@ fun BaseScreen(
     val context = LocalContext.current
     val yourMoney = buildAnnotatedString {
         withStyle(style  = SpanStyle(
-            fontSize = 22.sp,
+            fontSize = 16.sp,
             fontFamily = FontFamily(Font(font.exo)),
             fontWeight = FontWeight(400),
             color = baseText
@@ -64,7 +66,7 @@ fun BaseScreen(
             append(stringResource(id = R.string.your_money))
         }
         withStyle(style  = SpanStyle(
-            fontSize = 22.sp,
+            fontSize = 16.sp,
             fontFamily = FontFamily(Font(font.exo)),
             fontWeight = FontWeight(400),
             color = baseText
@@ -73,7 +75,7 @@ fun BaseScreen(
             append(" ")
         }
         withStyle(style  = SpanStyle(
-            fontSize = 22.sp,
+            fontSize = 16.sp,
             fontFamily = FontFamily(Font(font.exo)),
             fontWeight = FontWeight(400),
             color = green
@@ -101,7 +103,7 @@ fun BaseScreen(
             modifier = modifier
                 .fillMaxSize()
                 .background(color = white)
-                .padding(10.dp)
+                .padding(vertical = 10.dp, horizontal = 20.dp)
         ) {
             Row (
                 modifier = modifier.fillMaxWidth(),
@@ -129,12 +131,16 @@ fun BaseScreen(
             }
             Spacer(modifier = modifier.height(20.dp))
             Slider(
-                modifier = modifier.fillMaxWidth(),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .background(Color.Transparent),
                 value = state.value.neededSum.toFloat(),
                 valueRange = 1000f..state.value.maxSum.toFloat(),
-                steps = 10000,
+                steps = 1000,
                 colors = SliderDefaults.colors(
+                    thumbColor = green,
                     activeTrackColor = green,
+                    inactiveTrackColor = white
                 ),
                 onValueChange = { viewModel.filterByMaxAmount(it.toInt()) }
             )
@@ -179,8 +185,8 @@ fun BaseScreen(
                     name = stringResource(id = R.string.checkout),
                     image = painterResource(id = R.drawable.checkout)
                 )
-                ItemSub(
-                    name = yourMoney.toString(),
+                ItemSubAn(
+                    name = yourMoney,
                     image = painterResource(id = R.drawable.time)
                 )
             }
@@ -208,8 +214,38 @@ private fun ItemSub(
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Image(
+            modifier = modifier.size(72.dp),
             painter = image,
-            contentDescription = "")
+            contentDescription = ""
+        )
+        Spacer(modifier = modifier.height(15.dp))
+        Text(
+            text = name,
+            style = TextStyle(
+                fontSize = 16.sp,
+                fontFamily = FontFamily(Font(font.exo)),
+                fontWeight = FontWeight(400),
+                color = baseText
+            ),
+            textAlign = TextAlign.Center
+        )
+    }
+}
+
+@Composable
+private fun ItemSubAn(
+    modifier: Modifier = Modifier,
+    name: AnnotatedString,
+    image: Painter
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            modifier = modifier.size(72.dp),
+            painter = image,
+            contentDescription = ""
+        )
         Spacer(modifier = modifier.height(15.dp))
         Text(
             text = name,
