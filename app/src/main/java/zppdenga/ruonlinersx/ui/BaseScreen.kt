@@ -1,6 +1,8 @@
 package zppdenga.ruonlinersx.ui
 
+import android.os.Build.VERSION_CODES
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -47,7 +49,7 @@ import zppdenga.ruonlinersx.ui.theme.green
 import zppdenga.ruonlinersx.ui.theme.greyText
 import zppdenga.ruonlinersx.ui.theme.white
 
-
+@RequiresApi(VERSION_CODES.O)
 @Composable
 fun BaseScreen(
     modifier: Modifier = Modifier,
@@ -81,7 +83,7 @@ fun BaseScreen(
             color = green
         )
         ) {
-            append(stringResource(id = R.string.your_time))
+            append(state.value.time)
         }
     }
     if (state.value.error!=null) {

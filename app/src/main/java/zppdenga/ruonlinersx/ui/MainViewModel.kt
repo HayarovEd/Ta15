@@ -1,5 +1,7 @@
 package zppdenga.ruonlinersx.ui
 
+import android.os.Build.VERSION_CODES
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,7 +14,7 @@ import zppdenga.ruonlinersx.data.mapper.maxAmount
 import zppdenga.ruonlinersx.domain.model.Loan
 import zppdenga.ruonlinersx.domain.repository.TaRepository
 import zppdenga.ruonlinersx.domain.utils.Resource
-
+@RequiresApi(VERSION_CODES.O)
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: TaRepository
