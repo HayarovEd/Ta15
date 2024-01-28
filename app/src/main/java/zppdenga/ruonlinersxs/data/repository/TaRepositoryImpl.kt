@@ -1,10 +1,10 @@
-package zppdenga.creditpluss.data.repository
+package zppdenga.ruonlinersxs.data.repository
 
-import zppdenga.creditpluss.data.mapper.mapToLoan
-import zppdenga.creditpluss.data.remote.ApiTa
-import zppdenga.creditpluss.domain.model.Loan
-import zppdenga.creditpluss.domain.repository.TaRepository
-import zppdenga.creditpluss.domain.utils.Resource
+import zppdenga.ruonlinersxs.data.mapper.mapToLoan
+import zppdenga.ruonlinersxs.data.remote.ApiTa
+import zppdenga.ruonlinersxs.domain.model.Loan
+import zppdenga.ruonlinersxs.domain.repository.TaRepository
+import zppdenga.ruonlinersxs.domain.utils.Resource
 import javax.inject.Inject
 
 class TaRepositoryImpl @Inject constructor(private val apiTa: ApiTa) : TaRepository {

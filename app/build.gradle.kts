@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "zppdenga.creditpluss"
+    namespace = "zppdenga.ruonlinersxs"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "zppdenga.creditpluss"
+        applicationId = "zppdenga.ruonlinersxs"
         minSdk = 21
         targetSdk = 34
         versionCode = 1

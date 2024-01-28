@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui
+package zppdenga.ruonlinersxs.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -33,13 +33,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import zppdenga.creditpluss.R
-import zppdenga.creditpluss.domain.model.Loan
-import zppdenga.creditpluss.ui.theme.baseText
-import zppdenga.creditpluss.ui.theme.green
-import zppdenga.creditpluss.ui.theme.greyText
-import zppdenga.creditpluss.ui.theme.line
-import zppdenga.creditpluss.ui.theme.white
+import zppdenga.ruonlinersxs.R
+import zppdenga.ruonlinersxs.domain.model.Loan
+import zppdenga.ruonlinersxs.ui.theme.baseText
+import zppdenga.ruonlinersxs.ui.theme.green
+import zppdenga.ruonlinersxs.ui.theme.greyText
+import zppdenga.ruonlinersxs.ui.theme.line
+import zppdenga.ruonlinersxs.ui.theme.white
 
 @Composable
 fun ItemLoan(

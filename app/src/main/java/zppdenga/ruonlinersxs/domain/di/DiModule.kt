@@ -1,7 +1,7 @@
-package zppdenga.creditpluss.domain.di
+package zppdenga.ruonlinersxs.domain.di
 
-import zppdenga.creditpluss.data.repository.TaRepositoryImpl
-import zppdenga.creditpluss.domain.repository.TaRepository
+import zppdenga.ruonlinersxs.data.repository.TaRepositoryImpl
+import zppdenga.ruonlinersxs.domain.repository.TaRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

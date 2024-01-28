@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui.theme
+package zppdenga.ruonlinersxs.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

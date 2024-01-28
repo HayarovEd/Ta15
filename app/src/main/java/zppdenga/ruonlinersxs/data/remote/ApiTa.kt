@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.data.remote
+package zppdenga.ruonlinersxs.data.remote
 
 import retrofit2.http.GET
 

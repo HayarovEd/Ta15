@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui
+package zppdenga.ruonlinersxs.ui
 
 import android.os.Build.VERSION_CODES
 import androidx.annotation.RequiresApi
@@ -10,10 +10,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import zppdenga.creditpluss.data.mapper.maxAmount
-import zppdenga.creditpluss.domain.model.Loan
-import zppdenga.creditpluss.domain.repository.TaRepository
-import zppdenga.creditpluss.domain.utils.Resource
+import zppdenga.ruonlinersxs.data.mapper.maxAmount
+import zppdenga.ruonlinersxs.domain.model.Loan
+import zppdenga.ruonlinersxs.domain.repository.TaRepository
+import zppdenga.ruonlinersxs.domain.utils.Resource
 @RequiresApi(VERSION_CODES.O)
 @HiltViewModel
 class MainViewModel @Inject constructor(

@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui.theme
+package zppdenga.ruonlinersxs.ui.theme
 
 import android.app.Activity
 import android.os.Build

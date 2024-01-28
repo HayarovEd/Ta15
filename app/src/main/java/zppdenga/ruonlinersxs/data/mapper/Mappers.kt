@@ -1,11 +1,11 @@
-package zppdenga.creditpluss.data.mapper
+package zppdenga.ruonlinersxs.data.mapper
 
 import android.os.Build.VERSION_CODES
 import androidx.annotation.RequiresApi
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
-import zppdenga.creditpluss.data.remote.LoanDto
-import zppdenga.creditpluss.domain.model.Loan
+import zppdenga.ruonlinersxs.data.remote.LoanDto
+import zppdenga.ruonlinersxs.domain.model.Loan
 
 fun List<LoanDto>.mapToLoan(): List<Loan> {
     return this.map {

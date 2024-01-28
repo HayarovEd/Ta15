@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui
+package zppdenga.ruonlinersxs.ui
 
 import android.os.Build
 import android.os.Bundle

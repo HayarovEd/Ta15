@@ -1,7 +1,7 @@
-package zppdenga.creditpluss.domain.di
+package zppdenga.ruonlinersxs.domain.di
 
-import zppdenga.creditpluss.data.remote.ApiTa
-import zppdenga.creditpluss.domain.utils.BASE_URL
+import zppdenga.ruonlinersxs.data.remote.ApiTa
+import zppdenga.ruonlinersxs.domain.utils.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui
+package zppdenga.ruonlinersxs.ui
 
 import android.os.Build.VERSION_CODES
 import android.widget.Toast
@@ -42,12 +42,12 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import zppdenga.creditpluss.R
-import zppdenga.creditpluss.R.font
-import zppdenga.creditpluss.ui.theme.baseText
-import zppdenga.creditpluss.ui.theme.green
-import zppdenga.creditpluss.ui.theme.greyText
-import zppdenga.creditpluss.ui.theme.white
+import zppdenga.ruonlinersxs.R
+import zppdenga.ruonlinersxs.R.font
+import zppdenga.ruonlinersxs.ui.theme.baseText
+import zppdenga.ruonlinersxs.ui.theme.green
+import zppdenga.ruonlinersxs.ui.theme.greyText
+import zppdenga.ruonlinersxs.ui.theme.white
 
 @RequiresApi(VERSION_CODES.O)
 @Composable

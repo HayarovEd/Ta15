@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.ui.theme
+package zppdenga.ruonlinersxs.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

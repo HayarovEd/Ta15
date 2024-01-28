@@ -1,6 +1,6 @@
-package zppdenga.creditpluss.domain.model
+package zppdenga.ruonlinersxs.domain.model
 
-import zppdenga.creditpluss.data.mapper.convertToInt
+import zppdenga.ruonlinersxs.data.mapper.convertToInt
 
 data class Loan(
     val age: String,

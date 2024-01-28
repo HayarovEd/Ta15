@@ -1,4 +1,4 @@
-package zppdenga.creditpluss
+package zppdenga.ruonlinersxs
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

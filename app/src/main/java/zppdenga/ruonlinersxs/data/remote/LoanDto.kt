@@ -1,4 +1,4 @@
-package zppdenga.creditpluss.data.remote
+package zppdenga.ruonlinersxs.data.remote
 
 
 import com.google.gson.annotations.SerializedName
